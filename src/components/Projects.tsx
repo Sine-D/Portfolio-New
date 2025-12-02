@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { AnimatePresence, motion } from 'framer-motion'
-import { FiGithub, FiX, FiPlus, FiMinus, FiSearch, FiPlay } from 'react-icons/fi'
+import { FiGithub, FiX, FiPlus, FiMinus } from 'react-icons/fi'
 import { SectionTransition } from './PageTransition'
 import { ParallaxElement } from './ParallaxSection'
 import { useDragScroll } from '../hooks/useDragScroll'
@@ -217,9 +217,7 @@ export default function Projects() {
     setCaseStudyModal(project)
   }
 
-  const openVideo = (url: string, title: string) => {
-    setVideoModal({ url, title })
-  }
+
 
 
 
