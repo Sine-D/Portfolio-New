@@ -115,11 +115,7 @@ export default function Hero() {
               >
                 {/* Front Face - Profile Photo */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl border-2 border-cyan-400/60 bg-gradient-to-br from-cyan-500/30 to-blue-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,182,212,0.3)] pointer-events-none overflow-hidden"
-                  style={{
-                    transform: 'translateZ(112px) md:translateZ(144px)',
-                    backfaceVisibility: 'visible',
-                  }}
+                  className="absolute inset-0 rounded-3xl border-2 border-cyan-400/60 bg-gradient-to-br from-cyan-500/30 to-blue-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,182,212,0.3)] pointer-events-none overflow-hidden [transform:translateZ(112px)] md:[transform:translateZ(144px)] backface-visible"
                   whileHover={{
                     backgroundColor: 'rgba(6, 182, 212, 0.4)',
                     boxShadow: '0 0 60px rgba(6, 182, 212, 0.6)',
@@ -143,11 +139,7 @@ export default function Hero() {
 
                 {/* Back Face - Profile Photo 1 */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl border-2 border-purple-400/60 bg-gradient-to-br from-purple-500/30 to-pink-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(168,85,247,0.3)] pointer-events-none overflow-hidden"
-                  style={{
-                    transform: 'translateZ(-112px) rotateY(180deg) md:translateZ(-144px) md:rotateY(180deg)',
-                    backfaceVisibility: 'visible',
-                  }}
+                  className="absolute inset-0 rounded-3xl border-2 border-purple-400/60 bg-gradient-to-br from-purple-500/30 to-pink-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(168,85,247,0.3)] pointer-events-none overflow-hidden [transform:translateZ(-112px)_rotateY(180deg)] md:[transform:translateZ(-144px)_rotateY(180deg)] backface-visible"
                   whileHover={{
                     backgroundColor: 'rgba(168, 85, 247, 0.4)',
                     boxShadow: '0 0 60px rgba(168, 85, 247, 0.6)',
@@ -171,11 +163,7 @@ export default function Hero() {
 
                 {/* Right Face - Profile Photo 2 */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl border-2 border-indigo-400/60 bg-gradient-to-br from-indigo-500/30 to-purple-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(99,102,241,0.3)] pointer-events-none overflow-hidden"
-                  style={{
-                    transform: 'rotateY(90deg) translateZ(112px) md:rotateY(90deg) md:translateZ(144px)',
-                    backfaceVisibility: 'visible',
-                  }}
+                  className="absolute inset-0 rounded-3xl border-2 border-indigo-400/60 bg-gradient-to-br from-indigo-500/30 to-purple-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(99,102,241,0.3)] pointer-events-none overflow-hidden [transform:rotateY(90deg)_translateZ(112px)] md:[transform:rotateY(90deg)_translateZ(144px)] backface-visible"
                   whileHover={{
                     backgroundColor: 'rgba(99, 102, 241, 0.4)',
                     boxShadow: '0 0 60px rgba(99, 102, 241, 0.6)',
@@ -199,11 +187,7 @@ export default function Hero() {
 
                 {/* Left Face - Profile Photo 2 */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl border-2 border-pink-400/60 bg-gradient-to-br from-pink-500/30 to-rose-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(236,72,153,0.3)] pointer-events-none overflow-hidden"
-                  style={{
-                    transform: 'rotateY(-90deg) translateZ(112px) md:rotateY(-90deg) md:translateZ(144px)',
-                    backfaceVisibility: 'visible',
-                  }}
+                  className="absolute inset-0 rounded-3xl border-2 border-pink-400/60 bg-gradient-to-br from-pink-500/30 to-rose-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(236,72,153,0.3)] pointer-events-none overflow-hidden [transform:rotateY(-90deg)_translateZ(112px)] md:[transform:rotateY(-90deg)_translateZ(144px)] backface-visible"
                   whileHover={{
                     backgroundColor: 'rgba(236, 72, 153, 0.4)',
                     boxShadow: '0 0 60px rgba(236, 72, 153, 0.6)',
@@ -227,11 +211,7 @@ export default function Hero() {
 
                 {/* Top Face - Profile Photo 3 */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl border-2 border-blue-400/60 bg-gradient-to-br from-blue-500/30 to-cyan-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.3)] pointer-events-none overflow-hidden"
-                  style={{
-                    transform: 'rotateX(90deg) translateZ(112px) md:rotateX(90deg) md:translateZ(144px)',
-                    backfaceVisibility: 'visible',
-                  }}
+                  className="absolute inset-0 rounded-3xl border-2 border-blue-400/60 bg-gradient-to-br from-blue-500/30 to-cyan-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.3)] pointer-events-none overflow-hidden [transform:rotateX(90deg)_translateZ(112px)] md:[transform:rotateX(90deg)_translateZ(144px)] backface-visible"
                   whileHover={{
                     backgroundColor: 'rgba(59, 130, 246, 0.4)',
                     boxShadow: '0 0 60px rgba(59, 130, 246, 0.6)',
@@ -255,11 +235,7 @@ export default function Hero() {
 
                 {/* Bottom Face - Profile Photo 3 */}
                 <motion.div
-                  className="absolute inset-0 rounded-3xl border-2 border-violet-400/60 bg-gradient-to-br from-violet-500/30 to-purple-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(139,92,246,0.3)] pointer-events-none overflow-hidden"
-                  style={{
-                    transform: 'rotateX(-90deg) translateZ(112px) md:rotateX(-90deg) md:translateZ(144px)',
-                    backfaceVisibility: 'visible',
-                  }}
+                  className="absolute inset-0 rounded-3xl border-2 border-violet-400/60 bg-gradient-to-br from-violet-500/30 to-purple-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(139,92,246,0.3)] pointer-events-none overflow-hidden [transform:rotateX(-90deg)_translateZ(112px)] md:[transform:rotateX(-90deg)_translateZ(144px)] backface-visible"
                   whileHover={{
                     backgroundColor: 'rgba(139, 92, 246, 0.4)',
                     boxShadow: '0 0 60px rgba(139, 92, 246, 0.6)',
