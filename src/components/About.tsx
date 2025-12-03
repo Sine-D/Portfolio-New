@@ -69,18 +69,18 @@ export default function About() {
                 className="glass rounded-2xl p-8"
               >
                 <h3 className="text-2xl font-bold mb-4 text-gradient">Who I Am</h3>
-                <p className="text-white/70 mb-4 leading-relaxed text-left md:text-justify">
+                <p className="text-white/70 mb-4 leading-relaxed text-justify">
                   I'm a creative full-stack developer with a passion for building exceptional
                   digital experiences. With expertise in modern web technologies, I transform
                   ideas into beautiful, functional, and user-centered applications.
                 </p>
-                <p className="text-white/70 mb-4 leading-relaxed text-left md:text-justify">
+                <p className="text-white/70 mb-4 leading-relaxed text-justify">
                   My journey in web development started with curiosity and has evolved into
                   a career focused on creating innovative solutions that make a difference.
                   I believe in writing clean, maintainable code and staying up-to-date with
                   the latest technologies and best practices.
                 </p>
-                <p className="text-white/70 leading-relaxed text-left md:text-justify">
+                <p className="text-white/70 leading-relaxed text-justify">
                   When I'm not coding, I enjoy exploring new technologies, contributing to
                   open-source projects, and sharing knowledge with the developer community.
                 </p>
