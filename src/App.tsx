@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Navigation from './components/Navigation'
-import BottomNavigation from './components/BottomNavigation'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
@@ -74,7 +73,6 @@ function App() {
           <Achievements />
           <Contact />
         </main>
-        <BottomNavigation />
       </div>
     </LoadingAnimation>
   )

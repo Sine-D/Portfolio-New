@@ -88,7 +88,7 @@ export default function Hero() {
             </div>
 
             <motion.div
-              className="relative w-72 h-72 cursor-grab active:cursor-grabbing"
+              className="relative w-56 h-56 md:w-72 md:h-72 cursor-grab active:cursor-grabbing"
               style={{ perspective: '1200px' }}
               drag
               dragElastic={0.16}
@@ -117,7 +117,7 @@ export default function Hero() {
                 <motion.div
                   className="absolute inset-0 rounded-3xl border-2 border-cyan-400/60 bg-gradient-to-br from-cyan-500/30 to-blue-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(6,182,212,0.3)] pointer-events-none overflow-hidden"
                   style={{
-                    transform: 'translateZ(144px)',
+                    transform: 'translateZ(112px) md:translateZ(144px)',
                     backfaceVisibility: 'visible',
                   }}
                   whileHover={{
@@ -145,7 +145,7 @@ export default function Hero() {
                 <motion.div
                   className="absolute inset-0 rounded-3xl border-2 border-purple-400/60 bg-gradient-to-br from-purple-500/30 to-pink-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(168,85,247,0.3)] pointer-events-none overflow-hidden"
                   style={{
-                    transform: 'translateZ(-144px) rotateY(180deg)',
+                    transform: 'translateZ(-112px) rotateY(180deg) md:translateZ(-144px) md:rotateY(180deg)',
                     backfaceVisibility: 'visible',
                   }}
                   whileHover={{
@@ -173,7 +173,7 @@ export default function Hero() {
                 <motion.div
                   className="absolute inset-0 rounded-3xl border-2 border-indigo-400/60 bg-gradient-to-br from-indigo-500/30 to-purple-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(99,102,241,0.3)] pointer-events-none overflow-hidden"
                   style={{
-                    transform: 'rotateY(90deg) translateZ(144px)',
+                    transform: 'rotateY(90deg) translateZ(112px) md:rotateY(90deg) md:translateZ(144px)',
                     backfaceVisibility: 'visible',
                   }}
                   whileHover={{
@@ -201,7 +201,7 @@ export default function Hero() {
                 <motion.div
                   className="absolute inset-0 rounded-3xl border-2 border-pink-400/60 bg-gradient-to-br from-pink-500/30 to-rose-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(236,72,153,0.3)] pointer-events-none overflow-hidden"
                   style={{
-                    transform: 'rotateY(-90deg) translateZ(144px)',
+                    transform: 'rotateY(-90deg) translateZ(112px) md:rotateY(-90deg) md:translateZ(144px)',
                     backfaceVisibility: 'visible',
                   }}
                   whileHover={{
@@ -229,7 +229,7 @@ export default function Hero() {
                 <motion.div
                   className="absolute inset-0 rounded-3xl border-2 border-blue-400/60 bg-gradient-to-br from-blue-500/30 to-cyan-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.3)] pointer-events-none overflow-hidden"
                   style={{
-                    transform: 'rotateX(90deg) translateZ(144px)',
+                    transform: 'rotateX(90deg) translateZ(112px) md:rotateX(90deg) md:translateZ(144px)',
                     backfaceVisibility: 'visible',
                   }}
                   whileHover={{
@@ -257,7 +257,7 @@ export default function Hero() {
                 <motion.div
                   className="absolute inset-0 rounded-3xl border-2 border-violet-400/60 bg-gradient-to-br from-violet-500/30 to-purple-600/30 backdrop-blur-2xl flex flex-col items-center justify-center shadow-[0_0_40px_rgba(139,92,246,0.3)] pointer-events-none overflow-hidden"
                   style={{
-                    transform: 'rotateX(-90deg) translateZ(144px)',
+                    transform: 'rotateX(-90deg) translateZ(112px) md:rotateX(-90deg) md:translateZ(144px)',
                     backfaceVisibility: 'visible',
                   }}
                   whileHover={{

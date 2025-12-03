@@ -334,7 +334,7 @@ export default function Projects() {
           <div
             ref={containerRef}
             {...dragHandlers}
-            className={`drag-scroll -mx-4 px-4 pb-4 flex gap-6 overflow-x-auto snap-x md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:mx-0 md:px-0 md:pb-0 ${isDragging ? 'dragging' : ''
+            className={`drag-scroll -mx-4 px-4 pb-4 flex gap-6 overflow-x-auto snap-x md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:mx-0 md:px-0 md:pb-0 ${isDragging ? 'dragging' : ''
               }`}
             style={{ touchAction: 'pan-y' }}
           >
@@ -355,7 +355,7 @@ export default function Projects() {
               ))
               : projects.map((project, index) => (
                 <SectionTransition key={project.id} delay={index * 0.1}>
-                  <div className="w-72 flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-none">
+                  <div className="w-[85vw] max-w-sm flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-none">
                     <Hover3D intensity={15}>
                       <motion.div
                         initial={{ opacity: 0, y: 50 }}

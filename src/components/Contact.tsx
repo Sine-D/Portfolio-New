@@ -67,7 +67,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass rounded-3xl p-12 relative overflow-hidden"
+            className="glass rounded-3xl p-6 md:p-12 relative overflow-hidden"
           >
             {/* Animated gradient border */}
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-xl"></div>
