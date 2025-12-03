@@ -34,8 +34,8 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6 text-center lg:text-left">
             <p className="text-sm uppercase tracking-[0.4em] text-cyan-200/70">Sineth Dinsara</p>
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight text-left">
-              Transforming Ideas Into Polished, Reliable Web   Applications.
+            <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-indigo-200 leading-tight text-center lg:text-left">
+              Transforming Ideas Into Polished, Reliable Web Applications.
             </h1>
             <p className="text-xl text-cyan-200 font-medium min-h-[32px]">{typedRole || 'Product-Focused Developer'}</p>
             <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
