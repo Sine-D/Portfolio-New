@@ -171,6 +171,17 @@ const projects: Project[] = [
     featured: false,
     category: 'Web App',
   },
+  {
+    id: 12,
+    title: 'Attendance Marking App',
+    description: 'A modern Attendance Marking App with Real-time attendance marking and leave management .',
+    tech: ['React.js', 'Node.js', 'MongoDB', 'JavaScript'],
+    image: 'https://www.deltasalesapp.com/assets/images/deltaSalesApp/Solutions/Slider/Mark%20Attendance%20_%20Leaves.png',
+    github: 'https://github.com/Sine-D/Attendance-Marking',
+    demo: 'https://example.com',
+    featured: false,
+    category: 'Web App',
+  },
 ]
 
 
