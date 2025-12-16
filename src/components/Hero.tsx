@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { FiGithub, FiLinkedin, FiArrowUpRight } from 'react-icons/fi'
+import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import { useConfetti } from '../hooks/useConfetti'
 import { useTypingAnimation } from '../hooks/useTypingAnimation'
 
@@ -19,7 +19,7 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
 
-  const launchConfetti = useConfetti()
+
   const roleVariations = ['Product-Focused Developer', 'Full Stack Engineer', 'UI Engineer', 'Creative Technologist']
   const typedRole = useTypingAnimation({ texts: roleVariations, typingSpeed: 90, deletingSpeed: 45 })
 
