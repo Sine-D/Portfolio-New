@@ -41,7 +41,9 @@ export default function Hero() {
             <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
               I build modern, reliable web applications that focus on clarity, speed, and user experience. My work blends thoughtful design with strong engineering practices to create products that feel intuitive and effortless to use. I prioritize clean architecture, maintainable code, and long-term stability. Every project is crafted to help users achieve their goals smoothly.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
 
+            </div>
             <div className="flex gap-6 justify-center lg:justify-start text-white/70">
               {socials.map(({ icon: Icon, href, label }) => (
                 <a
