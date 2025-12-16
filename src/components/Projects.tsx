@@ -324,6 +324,7 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           whileHover={{ scale: 1.05, rotate: 5 }}
                           whileTap={{ scale: 0.95 }}
                           className="p-3 glass rounded-xl text-white hover:text-cyan-400 transition-colors"
@@ -415,6 +416,7 @@ export default function Projects() {
                               href={project.github}
                               target="_blank"
                               rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
                               data-magnetic="true"
                               data-cursor-text="GitHub"
                               whileHover={{ scale: 1.05 }}
@@ -600,6 +602,7 @@ export default function Projects() {
                     href={caseStudyModal.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white flex items-center gap-2 btn-ripple"
