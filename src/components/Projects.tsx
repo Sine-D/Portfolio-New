@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { AnimatePresence, motion } from 'framer-motion'
 import { FiGithub, FiX, FiPlus, FiMinus } from 'react-icons/fi'
@@ -324,10 +324,14 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
+                          onClick={(e: React.MouseEvent) => {
+                            e.stopPropagation()
+                            e.preventDefault()
+                            window.open(project.github, '_blank', 'noopener,noreferrer')
+                          }}
                           whileHover={{ scale: 1.05, rotate: 5 }}
                           whileTap={{ scale: 0.95 }}
-                          className="p-3 glass rounded-xl text-white hover:text-cyan-400 transition-colors"
+                          className="p-3 glass rounded-xl text-white hover:text-cyan-400 transition-colors pointer-events-auto cursor-pointer"
                           aria-label="View Source"
                         >
                           <FiGithub size={24} />
@@ -416,12 +420,16 @@ export default function Projects() {
                               href={project.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
+                              onClick={(e: React.MouseEvent) => {
+                                e.stopPropagation()
+                                e.preventDefault()
+                                window.open(project.github, '_blank', 'noopener,noreferrer')
+                              }}
                               data-magnetic="true"
                               data-cursor-text="GitHub"
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
-                              className="glass-strong p-3 rounded-lg hover:bg-white/30 transition-colors relative icon-hover btn-ripple"
+                              className="glass-strong p-3 rounded-lg hover:bg-white/30 transition-colors relative icon-hover btn-ripple pointer-events-auto cursor-pointer"
                             >
                               <FiGithub className="text-xl" />
                             </motion.a>
@@ -602,10 +610,14 @@ export default function Projects() {
                     href={caseStudyModal.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e: React.MouseEvent) => {
+                      e.stopPropagation()
+                      e.preventDefault()
+                      window.open(caseStudyModal.github, '_blank', 'noopener,noreferrer')
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white flex items-center gap-2 btn-ripple"
+                    className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white flex items-center gap-2 btn-ripple pointer-events-auto cursor-pointer"
                   >
                     <FiGithub /> View Code
                   </motion.a>
