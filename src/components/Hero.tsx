@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
-import { useConfetti } from '../hooks/useConfetti'
 import { useTypingAnimation } from '../hooks/useTypingAnimation'
 
 const socials = [
