@@ -42,7 +42,7 @@ export default function Hero() {
               I build modern, reliable web applications that focus on clarity, speed, and user experience. My work blends thoughtful design with strong engineering practices to create products that feel intuitive and effortless to use. I prioritize clean architecture, maintainable code, and long-term stability. Every project is crafted to help users achieve their goals smoothly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-              <button
+              {/*<button
                 onClick={() => {
                   launchConfetti()
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
@@ -51,7 +51,7 @@ export default function Hero() {
               >
                 Let's collaborate
                 <FiArrowUpRight />
-              </button>
+              </button>*/}
             </div>
             <div className="flex gap-6 justify-center lg:justify-start text-white/70">
               {socials.map(({ icon: Icon, href, label }) => (
