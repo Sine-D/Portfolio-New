@@ -19,7 +19,7 @@ const timeline = [
       'Developed responsive web applications, implemented accessibility guidelines, and optimized performance.',
   },
   {
-    year: '2024.11 — 2025.03',
+    year: '2025.03 — 2025.04',
     role: 'Database Administrator',
     company: '',
     focus: 'Database Management · Security',
