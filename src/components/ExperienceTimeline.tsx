@@ -4,7 +4,7 @@ import { useState } from 'react'
 const timeline = [
   {
     year: '2025.11 — Present',
-    role: 'Associate Software Engineer',
+    role: 'Junior Software Engineer',
     company: 'Global Soft Solutions',
     focus: 'Frontend & Backend Development · Web Development',
     description:
@@ -12,7 +12,7 @@ const timeline = [
   },
   {
     year: '2025.04 — 2025.10',
-    role: 'Junior Software Engineer',
+    role: 'Intern Software Engineer',
     company: 'Global Soft Solutions',
     focus: 'Frontend Development · Web Development',
     description:
@@ -21,7 +21,7 @@ const timeline = [
   {
     year: '2024.11 — 2025.03',
     role: 'Database Administrator',
-    company: 'Global Soft Solutions',
+    company: '',
     focus: 'Database Management · Security',
     description:
       'Managed database operations, implemented security protocols, and optimized performance.',
