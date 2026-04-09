@@ -530,6 +530,7 @@ interface ImageTilt3DProps {
   alt: string
   className?: string
   intensity?: number
+  objectFit?: 'cover' | 'contain'
 }
 
 export function ImageTilt3D({
@@ -537,6 +538,7 @@ export function ImageTilt3D({
   alt,
   className = '',
   intensity = 15,
+  objectFit = 'cover',
 }: ImageTilt3DProps) {
   const ref = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
@@ -574,7 +576,7 @@ export function ImageTilt3D({
       <motion.img
         src={src}
         alt={alt}
-        className="w-full h-full object-cover"
+        className={`w-full h-full ${objectFit === 'contain' ? 'object-contain' : 'object-cover'}`}
         style={{ transform: 'translateZ(50px)' }}
         whileHover={{ scale: 1.1 }}
       />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { AnimatePresence, motion } from 'framer-motion'
-import { FiGithub, FiX, FiPlus, FiMinus } from 'react-icons/fi'
+import { FiGithub, FiX, FiPlus, FiMinus, FiExternalLink } from 'react-icons/fi'
 import { SectionTransition } from './PageTransition'
 import { ParallaxElement } from './ParallaxSection'
 import { useDragScroll } from '../hooks/useDragScroll'
@@ -30,6 +30,24 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    id: 13,
+    title: 'Global Cooperation (Pvt) Ltd - Official Website',
+    description: 'Global Cooperation (Pvt) Ltd is a Sri Lanka-based diversified holding company that builds, manages, and scales businesses across technology, advisory services, retail management, and digital innovation sectors.',
+    tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Supabase'],
+    image: 'https://media.licdn.com/dms/image/v2/D561FAQHDxLOJ2tYr-w/feedshare-document-images_1280/B56Z0LTWrtKMAU-/1/1774011119612?e=1776297600&v=beta&t=xN6-LW3NSnooU1Tz57Utu4GrzXoBWagp_pS6TDGaY1Y',
+    github: '',
+    demo: 'https://www.globalsoftsl.com/',
+    featured: true,
+    category: 'Website',
+    videoUrl: 'https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4',
+    caseStudy: {
+      challenge: 'Build a scalable e-commerce platform with real-time inventory tracking and secure payment processing.',
+      solution: 'Developed a full-stack application using React for the frontend, Node.js for the backend, MongoDB for data storage, and integrated Stripe for secure payments.',
+      results: 'Increased conversion rate by 40% and reduced checkout time by 60%.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Express', 'JWT'],
+    },
+  },
   {
     id: 1,
     title: 'Invoice & Report System',
@@ -275,8 +293,9 @@ export default function Projects() {
                         <ImageTilt3D
                           src={project.image}
                           alt={project.title}
-                          className="w-full aspect-video object-cover transform group-hover:scale-105 transition-transform duration-700"
+                          className="w-full aspect-video transform group-hover:scale-105 transition-transform duration-700"
                           intensity={10}
+                          objectFit={project.id === 13 ? "contain" : "cover"}
                         />
 
 
@@ -316,27 +335,42 @@ export default function Projects() {
                       </div>
 
                       <div className="flex flex-wrap gap-4">
+                        {project.github && (
+                          <motion.a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e: React.MouseEvent) => {
+                              e.stopPropagation()
+                              e.preventDefault()
+                              window.open(project.github, '_blank', 'noopener,noreferrer')
+                            }}
+                            whileHover={{ scale: 1.05, rotate: 5 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="p-3 glass rounded-xl text-white hover:text-cyan-400 transition-colors pointer-events-auto cursor-pointer"
+                            aria-label="View Source"
+                          >
+                            <FiGithub size={24} />
+                          </motion.a>
+                        )}
 
-
-
-
-                        <motion.a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e: React.MouseEvent) => {
-                            e.stopPropagation()
-                            e.preventDefault()
-                            window.open(project.github, '_blank', 'noopener,noreferrer')
-                          }}
-                          whileHover={{ scale: 1.05, rotate: 5 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="p-3 glass rounded-xl text-white hover:text-cyan-400 transition-colors pointer-events-auto cursor-pointer"
-                          aria-label="View Source"
-                        >
-                          <FiGithub size={24} />
-                        </motion.a>
-
+                        {project.demo && (
+                          <motion.a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e: React.MouseEvent) => {
+                              e.stopPropagation()
+                              e.preventDefault()
+                              window.open(project.demo, '_blank', 'noopener,noreferrer')
+                            }}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold text-white flex items-center gap-2 hover:shadow-lg hover:shadow-cyan-500/20 transition-all pointer-events-auto cursor-pointer"
+                          >
+                            <FiExternalLink size={20} /> Live Demo
+                          </motion.a>
+                        )}
                       </div>
                     </motion.div>
                   </div>
@@ -415,25 +449,43 @@ export default function Projects() {
                             ))}
                           </div>
                           <div className="flex gap-3">
+                            {project.github && (
+                              <motion.a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e: React.MouseEvent) => {
+                                  e.stopPropagation()
+                                  e.preventDefault()
+                                  window.open(project.github, '_blank', 'noopener,noreferrer')
+                                }}
+                                data-magnetic="true"
+                                data-cursor-text="GitHub"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="glass-strong p-3 rounded-lg hover:bg-white/30 transition-colors relative icon-hover btn-ripple pointer-events-auto cursor-pointer"
+                              >
+                                <FiGithub className="text-xl" />
+                              </motion.a>
+                            )}
 
-                            <motion.a
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e: React.MouseEvent) => {
-                                e.stopPropagation()
-                                e.preventDefault()
-                                window.open(project.github, '_blank', 'noopener,noreferrer')
-                              }}
-                              data-magnetic="true"
-                              data-cursor-text="GitHub"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="glass-strong p-3 rounded-lg hover:bg-white/30 transition-colors relative icon-hover btn-ripple pointer-events-auto cursor-pointer"
-                            >
-                              <FiGithub className="text-xl" />
-                            </motion.a>
-
+                            {project.demo && (
+                              <motion.a
+                                href={project.demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e: React.MouseEvent) => {
+                                  e.stopPropagation()
+                                  e.preventDefault()
+                                  window.open(project.demo, '_blank', 'noopener,noreferrer')
+                                }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="flex-1 px-4 py-2 glass rounded-lg text-cyan-400 font-semibold flex items-center justify-center gap-2 hover:bg-cyan-500/10 transition-colors pointer-events-auto cursor-pointer"
+                              >
+                                <FiExternalLink /> Demo
+                              </motion.a>
+                            )}
                           </div>
                         </div>
                       </motion.div>
@@ -605,23 +657,42 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <div className="flex gap-4 pt-4">
-                  <motion.a
-                    href={caseStudyModal.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e: React.MouseEvent) => {
-                      e.stopPropagation()
-                      e.preventDefault()
-                      window.open(caseStudyModal.github, '_blank', 'noopener,noreferrer')
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white flex items-center gap-2 btn-ripple pointer-events-auto cursor-pointer"
-                  >
-                    <FiGithub /> View Code
-                  </motion.a>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  {caseStudyModal.github && (
+                    <motion.a
+                      href={caseStudyModal.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e: React.MouseEvent) => {
+                        e.stopPropagation()
+                        e.preventDefault()
+                        window.open(caseStudyModal.github, '_blank', 'noopener,noreferrer')
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-6 py-3 glass rounded-lg font-semibold text-white flex items-center gap-2 hover:bg-white/10 transition-colors pointer-events-auto cursor-pointer"
+                    >
+                      <FiGithub /> View Code
+                    </motion.a>
+                  )}
 
+                  {caseStudyModal.demo && (
+                    <motion.a
+                      href={caseStudyModal.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e: React.MouseEvent) => {
+                        e.stopPropagation()
+                        e.preventDefault()
+                        window.open(caseStudyModal.demo, '_blank', 'noopener,noreferrer')
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white flex items-center gap-2 btn-ripple pointer-events-auto cursor-pointer"
+                    >
+                      <FiExternalLink /> Live Demo
+                    </motion.a>
+                  )}
                 </div>
               </div>
             </motion.div>
