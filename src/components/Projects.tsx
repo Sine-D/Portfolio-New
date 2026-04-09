@@ -8,6 +8,7 @@ import { useDragScroll } from '../hooks/useDragScroll'
 import {
   Hover3D,
   ImageTilt3D,
+  Magnetic3D,
 } from './ThreeD'
 
 interface Project {
@@ -372,36 +373,40 @@ export default function Projects() {
 
                       <div className="flex flex-wrap gap-4">
                         {[1, 15].includes(project.id) && project.github && (
-                          <motion.a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e: React.MouseEvent) => e.stopPropagation()}
-                            whileHover={{ scale: 1.05, rotate: 5 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="p-3 glass rounded-xl text-white hover:text-cyan-400 transition-colors pointer-events-auto cursor-pointer"
-                            aria-label="View Source"
-                          >
-                            <FiGithub size={24} />
-                          </motion.a>
+                          <Magnetic3D strength={20}>
+                            <motion.a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                              whileHover={{ scale: 1.05, rotate: 5 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="p-3 glass rounded-xl text-white hover:text-cyan-400 transition-colors pointer-events-auto cursor-pointer inline-block"
+                              aria-label="View Source"
+                            >
+                              <FiGithub size={24} />
+                            </motion.a>
+                          </Magnetic3D>
                         )}
 
                         {[13, 14, 15].includes(project.id) && project.demo && (
-                          <motion.a
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e: React.MouseEvent) => {
-                              e.stopPropagation()
-                              e.preventDefault()
-                              window.open(project.demo, '_blank', 'noopener,noreferrer')
-                            }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold text-white flex items-center gap-2 hover:shadow-lg hover:shadow-cyan-500/20 transition-all pointer-events-auto cursor-pointer"
-                          >
-                            <FiExternalLink size={20} /> Live Demo
-                          </motion.a>
+                          <Magnetic3D strength={15}>
+                            <motion.a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e: React.MouseEvent) => {
+                                e.stopPropagation()
+                                e.preventDefault()
+                                window.open(project.demo, '_blank', 'noopener,noreferrer')
+                              }}
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold text-white flex items-center gap-2 hover:shadow-lg hover:shadow-cyan-500/20 transition-all pointer-events-auto cursor-pointer inline-block"
+                            >
+                              <FiExternalLink size={20} /> Live Demo
+                            </motion.a>
+                          </Magnetic3D>
                         )}
 
 
@@ -485,38 +490,42 @@ export default function Projects() {
                           </div>
                           <div className="flex gap-3 pt-2 mt-auto">
                             {[1, 15].includes(project.id) && project.github && (
-                              <motion.a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e: React.MouseEvent) => e.stopPropagation()}
-                                data-magnetic="true"
-                                data-cursor-text="GitHub"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="glass-strong p-3 rounded-lg hover:bg-white/30 transition-colors relative icon-hover btn-ripple pointer-events-auto cursor-pointer"
-                              >
-                                <FiGithub className="text-xl" />
-                              </motion.a>
+                              <Magnetic3D strength={25}>
+                                <motion.a
+                                  href={project.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                                  data-magnetic="true"
+                                  data-cursor-text="GitHub"
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  className="glass-strong p-3 rounded-lg hover:bg-white/30 transition-colors relative icon-hover btn-ripple pointer-events-auto cursor-pointer inline-block"
+                                >
+                                  <FiGithub className="text-xl" />
+                                </motion.a>
+                              </Magnetic3D>
                             )}
 
                             {[13, 14, 15].includes(project.id) && project.demo && (
-                              <motion.a
-                                href={project.demo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e: React.MouseEvent) => {
-                                  e.stopPropagation()
-                                  e.preventDefault()
-                                  window.open(project.demo, '_blank', 'noopener,noreferrer')
-                                }}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="flex-1 px-4 py-2 glass rounded-lg text-cyan-400 font-semibold flex items-center justify-center gap-2 hover:bg-cyan-500/10 transition-colors pointer-events-auto cursor-pointer"
-                                aria-label={`View Live Demo of ${project.title}`}
-                              >
-                                <FiExternalLink /> Demo
-                              </motion.a>
+                              <Magnetic3D strength={20}>
+                                <motion.a
+                                  href={project.demo}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e: React.MouseEvent) => {
+                                    e.stopPropagation()
+                                    e.preventDefault()
+                                    window.open(project.demo, '_blank', 'noopener,noreferrer')
+                                  }}
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  className="flex-1 px-4 py-2 glass rounded-lg text-cyan-400 font-semibold flex items-center justify-center gap-2 hover:bg-cyan-500/10 transition-colors pointer-events-auto cursor-pointer inline-block"
+                                  aria-label={`View Live Demo of ${project.title}`}
+                                >
+                                  <FiExternalLink /> Demo
+                                </motion.a>
+                              </Magnetic3D>
                             )}
 
 

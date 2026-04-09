@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import { useTypingAnimation } from '../hooks/useTypingAnimation'
+import { Magnetic3D } from './ThreeD'
 
 const socials = [
   { icon: FiGithub, href: 'https://github.com/Sine-D', label: 'GitHub' },
@@ -43,16 +44,17 @@ export default function Hero() {
 
             <div className="flex gap-6 justify-center lg:justify-start text-white/70">
               {socials.map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="text-2xl hover:text-white transition"
-                >
-                  <Icon />
-                </a>
+                <Magnetic3D key={label} strength={20}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="text-2xl hover:text-white transition inline-block"
+                  >
+                    <Icon />
+                  </a>
+                </Magnetic3D>
               ))}
             </div>
           </div>

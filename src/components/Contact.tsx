@@ -4,6 +4,7 @@ import { FiMail, FiMapPin } from 'react-icons/fi'
 import {
   Hover3D,
   ExtrudedText3D,
+  Magnetic3D,
 } from './ThreeD'
 import { SiGithub, SiLinkedin, SiWhatsapp } from 'react-icons/si'
 
@@ -105,36 +106,37 @@ export default function Contact() {
                   const colorScheme = colors[index % colors.length]
 
                   return (
-                    <motion.a
-                      key={info.label}
-                      href={info.link}
-                      target={info.link.startsWith('http') ? '_blank' : undefined}
-                      rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={inView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                      whileHover={{ scale: 1.02, y: -4 }}
-                      whileTap={{ scale: 0.98 }}
-                      className={`group relative overflow-hidden rounded-2xl p-6 bg-gradient-to-r ${colorScheme.bg} backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg ${colorScheme.glow}`}
-                    >
-                      {/* Animated background on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                    <Magnetic3D key={info.label} strength={15}>
+                      <motion.a
+                        href={info.link}
+                        target={info.link.startsWith('http') ? '_blank' : undefined}
+                        rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={inView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                        whileHover={{ scale: 1.02, y: -4 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`group relative overflow-hidden rounded-2xl p-6 bg-gradient-to-r ${colorScheme.bg} backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg ${colorScheme.glow} block`}
+                      >
+                        {/* Animated background on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
 
-                      <div className="relative flex items-center gap-5">
-                        <div className={`flex-shrink-0 p-4 rounded-xl bg-white/5 ${colorScheme.icon} group-hover:scale-110 transition-transform duration-300`}>
-                          <Icon className="text-3xl" />
+                        <div className="relative flex items-center gap-5">
+                          <div className={`flex-shrink-0 p-4 rounded-xl bg-white/5 ${colorScheme.icon} group-hover:scale-110 transition-transform duration-300`}>
+                            <Icon className="text-3xl" />
+                          </div>
+                          <div className="flex-grow min-w-0">
+                            <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mb-1">{info.label}</div>
+                            <div className="font-bold text-white text-lg truncate">{info.value}</div>
+                          </div>
+                          <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg className="w-5 h-5 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
                         </div>
-                        <div className="flex-grow min-w-0">
-                          <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mb-1">{info.label}</div>
-                          <div className="font-bold text-white text-lg truncate">{info.value}</div>
-                        </div>
-                        <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <svg className="w-5 h-5 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </div>
-                    </motion.a>
+                      </motion.a>
+                    </Magnetic3D>
                   )
                 })}
               </div>
@@ -153,8 +155,8 @@ export default function Contact() {
                   {socialLinks.map((social, index) => {
                     const Icon = social.icon
                     return (
+                    <Magnetic3D key={social.label} strength={30}>
                       <motion.a
-                        key={social.label}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -163,7 +165,7 @@ export default function Contact() {
                         transition={{ duration: 0.5, delay: 0.8 + index * 0.1, type: 'spring', stiffness: 200 }}
                         whileHover={{ scale: 1.15, y: -8, rotate: 5 }}
                         whileTap={{ scale: 0.95 }}
-                        className="group relative p-5 rounded-2xl bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 text-3xl"
+                        className="group relative p-5 rounded-2xl bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 text-3xl inline-block"
                         style={{
                           boxShadow: `0 0 30px ${social.color}20`,
                         }}
@@ -185,6 +187,7 @@ export default function Contact() {
                           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-4 border-transparent border-t-slate-800"></div>
                         </div>
                       </motion.a>
+                    </Magnetic3D>
                     )
                   })}
                 </div>
