@@ -371,16 +371,12 @@ export default function Projects() {
                       </div>
 
                       <div className="flex flex-wrap gap-4">
-                        {project.github && (
+                        {[1, 15].includes(project.id) && project.github && (
                           <motion.a
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e: React.MouseEvent) => {
-                              e.stopPropagation()
-                              e.preventDefault()
-                              window.open(project.github, '_blank', 'noopener,noreferrer')
-                            }}
+                            onClick={(e: React.MouseEvent) => e.stopPropagation()}
                             whileHover={{ scale: 1.05, rotate: 5 }}
                             whileTap={{ scale: 0.95 }}
                             className="p-3 glass rounded-xl text-white hover:text-cyan-400 transition-colors pointer-events-auto cursor-pointer"
@@ -488,16 +484,12 @@ export default function Projects() {
                             ))}
                           </div>
                           <div className="flex gap-3 pt-2 mt-auto">
-                            {project.github && (
+                            {[1, 15].includes(project.id) && project.github && (
                               <motion.a
                                 href={project.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                onClick={(e: React.MouseEvent) => {
-                                  e.stopPropagation()
-                                  e.preventDefault()
-                                  window.open(project.github, '_blank', 'noopener,noreferrer')
-                                }}
+                                onClick={(e: React.MouseEvent) => e.stopPropagation()}
                                 data-magnetic="true"
                                 data-cursor-text="GitHub"
                                 whileHover={{ scale: 1.05 }}
@@ -700,16 +692,12 @@ export default function Projects() {
                 </div>
 
                 <div className="flex flex-wrap gap-4 pt-4">
-                  {caseStudyModal.github && (
+                  {[1, 15].includes(caseStudyModal.id) && caseStudyModal.github && (
                     <motion.a
                       href={caseStudyModal.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={(e: React.MouseEvent) => {
-                        e.stopPropagation()
-                        e.preventDefault()
-                        window.open(caseStudyModal.github, '_blank', 'noopener,noreferrer')
-                      }}
+                      onClick={(e: React.MouseEvent) => e.stopPropagation()}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="px-6 py-3 glass rounded-lg font-semibold text-white flex items-center gap-2 hover:bg-white/10 transition-colors pointer-events-auto cursor-pointer"
