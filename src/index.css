@@ -8,6 +8,10 @@
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     perspective: 1000px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 
   html {
