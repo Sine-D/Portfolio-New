@@ -211,21 +211,15 @@
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Hidden */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-slate-900;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-cyan-500 to-purple-500 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply from-cyan-400 to-purple-400;
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
 /* Animations */
