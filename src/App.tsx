@@ -59,9 +59,7 @@ function App() {
         <div className="pointer-events-none absolute top-10 right-10 z-0 hidden lg:block">
           <Geometric3D shape="sphere" size={200} color="#06b6d4" />
         </div>
-        <div className="pointer-events-none absolute top-1/2 right-1/4 z-0 hidden xl:block">
-          <Geometric3D shape="pyramid" size={120} color="#ec4899" />
-        </div>
+
 
         <div
           className="pointer-events-none absolute inset-0 opacity-20"
