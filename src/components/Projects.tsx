@@ -35,9 +35,27 @@ const projects: Project[] = [
     title: 'Global Cooperation (Pvt) Ltd - Official Website',
     description: 'Global Cooperation (Pvt) Ltd is a Sri Lanka-based diversified holding company that builds, manages, and scales businesses across technology, advisory services, retail management, and digital innovation sectors.',
     tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Supabase'],
-    image: 'https://media.licdn.com/dms/image/v2/D561FAQHDxLOJ2tYr-w/feedshare-document-images_1280/B56Z0LTWrtKMAU-/1/1774011119612?e=1776297600&v=beta&t=xN6-LW3NSnooU1Tz57Utu4GrzXoBWagp_pS6TDGaY1Y',
+    image: '/images/global.png',
     github: '',
     demo: 'https://www.globalsoftsl.com/',
+    featured: true,
+    category: 'Website',
+    videoUrl: 'https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4',
+    caseStudy: {
+      challenge: 'Build a scalable e-commerce platform with real-time inventory tracking and secure payment processing.',
+      solution: 'Developed a full-stack application using React for the frontend, Node.js for the backend, MongoDB for data storage, and integrated Stripe for secure payments.',
+      results: 'Increased conversion rate by 40% and reduced checkout time by 60%.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Express', 'JWT'],
+    },
+  },
+  {
+    id: 14,
+    title: 'Steel Craft (Pvt) Ltd - Official Website',
+    description: 'Steel Craft (Pvt) Ltd is a steel crafting company specializing in the design, fabrication, and delivery of high-quality custom steel products and structural solutions for residential, commercial, and industrial needs.',
+    tech: ['Next.js', 'Node.js', 'Tailwind CSS'],
+    image: '/images/steelcraft.png',
+    github: '',
+    demo: 'https://steel-craft.vercel.app/',
     featured: true,
     category: 'Website',
     videoUrl: 'https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4',
@@ -56,6 +74,24 @@ const projects: Project[] = [
     image: 'https://zegal.com/wp-content/uploads/2023/08/Legal-Invoicing-Software-1024x602.jpg',
     github: 'https://github.com/Sine-D/Report-System',
     demo: '',
+    featured: true,
+    category: 'Web App',
+    videoUrl: 'https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4',
+    caseStudy: {
+      challenge: 'Build a scalable e-commerce platform with real-time inventory tracking and secure payment processing.',
+      solution: 'Developed a full-stack application using React for the frontend, Node.js for the backend, MongoDB for data storage, and integrated Stripe for secure payments.',
+      results: 'Increased conversion rate by 40% and reduced checkout time by 60%.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Express', 'JWT'],
+    },
+  },
+  {
+    id: 15,
+    title: 'Farmigo',
+    description: 'Farmigo is a sustainable digital marketplace and learning platform that connects farmers with buyers, enables secure payments, and empowers growers through education and farm management tools.',
+    tech: ['React.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'MongoDB',],
+    image: 'https://itagri.org/media/carousel/shutterstockbluedog-studio_1816043228.jpg',
+    github: 'https://github.com/Sine-D/Farmigo',
+    demo: 'https://farmigoo.vercel.app/',
     featured: true,
     category: 'Web App',
     videoUrl: 'https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4',
@@ -405,15 +441,15 @@ export default function Projects() {
               ))
               : projects.map((project, index) => (
                 <SectionTransition key={project.id} delay={index * 0.1}>
-                  <div className="w-[85vw] max-w-sm flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-none">
-                    <Hover3D intensity={15}>
+                  <div className="w-[85vw] max-w-sm flex-shrink-0 snap-center md:w-auto md:flex-shrink md:snap-none h-full">
+                    <Hover3D intensity={15} className="h-full">
                       <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: index * 0.05 }}
                         whileHover={{ y: -6 }}
                         data-magnetic="true"
-                        className={`glass rounded-2xl overflow-hidden group relative card-3d ${project.featured ? 'border border-cyan-500/30' : ''
+                        className={`glass rounded-2xl overflow-hidden group relative card-3d flex flex-col h-full ${project.featured ? 'border border-cyan-500/30' : ''
                           }`}
                         style={{ transformStyle: 'preserve-3d' }}
                       >
@@ -428,13 +464,14 @@ export default function Projects() {
                             alt={project.title}
                             className="w-full h-full"
                             intensity={20}
+                            objectFit={project.id === 13 || project.id === 14 ? 'contain' : 'cover'}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
 
                           </div>
                         </button>
 
-                        <div className="p-6 space-y-4">
+                        <div className="p-6 flex flex-col flex-1 space-y-4">
                           <div className="flex items-center justify-between gap-4">
                             <h3 className="text-2xl font-bold group-hover:text-cyan-400 transition-colors">
                               {project.title}
@@ -448,7 +485,7 @@ export default function Projects() {
                               </span>
                             ))}
                           </div>
-                          <div className="flex gap-3">
+                          <div className="flex gap-3 pt-2 mt-auto">
                             {project.github && (
                               <motion.a
                                 href={project.github}
