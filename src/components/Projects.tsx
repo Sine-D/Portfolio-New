@@ -331,7 +331,7 @@ export default function Projects() {
                           alt={project.title}
                           className="w-full aspect-video transform group-hover:scale-105 transition-transform duration-700"
                           intensity={10}
-                          objectFit={project.id === 13 ? "contain" : "cover"}
+                          objectFit="cover"
                         />
 
 
@@ -341,7 +341,7 @@ export default function Projects() {
 
                   {/* Content Section */}
                   <div className="w-full md:w-2/5 relative">
-                    <div className={`absolute top-1/2 -translate-y-1/2 ${index % 2 === 0 ? '-right-20' : '-left-20'} w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -z-10`} />
+                    <div className={`absolute top-1/2 -translate-y-1/2 ${index % 2 === 0 ? '-right-20' : '-left-20'} w-64 h-64 bg-cyan-500/5 rounded-full -z-10`} />
 
                     <motion.div
                       initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
@@ -358,7 +358,7 @@ export default function Projects() {
                         {project.title}
                       </h3>
 
-                      <p className="text-white/70 text-lg leading-relaxed mb-8 text-left">
+                      <p className="text-white/90 text-lg leading-relaxed mb-8 text-left">
                         {project.description}
                       </p>
 
@@ -390,7 +390,7 @@ export default function Projects() {
                           </motion.a>
                         )}
 
-                        {project.demo && (
+                        {[13, 14, 15].includes(project.id) && project.demo && (
                           <motion.a
                             href={project.demo}
                             target="_blank"
@@ -407,6 +407,8 @@ export default function Projects() {
                             <FiExternalLink size={20} /> Live Demo
                           </motion.a>
                         )}
+
+
                       </div>
                     </motion.div>
                   </div>
@@ -464,7 +466,7 @@ export default function Projects() {
                             alt={project.title}
                             className="w-full h-full"
                             intensity={20}
-                            objectFit={project.id === 13 || project.id === 14 ? 'contain' : 'cover'}
+                            objectFit="cover"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
 
@@ -477,10 +479,10 @@ export default function Projects() {
                               {project.title}
                             </h3>
                           </div>
-                          <p className="text-white/70 text-sm leading-relaxed">{project.description}</p>
+                          <p className="text-white/90 text-sm leading-relaxed">{project.description}</p>
                           <div className="flex flex-wrap gap-2">
                             {project.tech.map((tech) => (
-                              <span key={tech} className="px-3 py-1 text-xs glass rounded-full text-white/80">
+                              <span key={tech} className="px-3 py-1 text-xs glass rounded-full text-white">
                                 {tech}
                               </span>
                             ))}
@@ -506,7 +508,7 @@ export default function Projects() {
                               </motion.a>
                             )}
 
-                            {project.demo && (
+                            {[13, 14, 15].includes(project.id) && project.demo && (
                               <motion.a
                                 href={project.demo}
                                 target="_blank"
@@ -519,10 +521,13 @@ export default function Projects() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="flex-1 px-4 py-2 glass rounded-lg text-cyan-400 font-semibold flex items-center justify-center gap-2 hover:bg-cyan-500/10 transition-colors pointer-events-auto cursor-pointer"
+                                aria-label={`View Live Demo of ${project.title}`}
                               >
                                 <FiExternalLink /> Demo
                               </motion.a>
                             )}
+
+
                           </div>
                         </div>
                       </motion.div>
@@ -713,7 +718,7 @@ export default function Projects() {
                     </motion.a>
                   )}
 
-                  {caseStudyModal.demo && (
+                  {[13, 14, 15].includes(caseStudyModal.id) && caseStudyModal.demo && (
                     <motion.a
                       href={caseStudyModal.demo}
                       target="_blank"
@@ -730,6 +735,8 @@ export default function Projects() {
                       <FiExternalLink /> Live Demo
                     </motion.a>
                   )}
+
+
                 </div>
               </div>
             </motion.div>
