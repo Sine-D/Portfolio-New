@@ -202,7 +202,7 @@ export default function Achievements() {
           <h3 className="text-3xl font-bold mb-10 text-center">
             <span className="text-gradient">Certifications</span>
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {certifications.map((cert, index) => {
               const Icon = cert.icon
               return (
@@ -213,7 +213,7 @@ export default function Achievements() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   whileHover={{ scale: 1.05, y: -8 }}
-                  className="glass rounded-2xl p-6 cursor-pointer group relative overflow-hidden"
+                  className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] flex-shrink-0 glass rounded-2xl p-6 cursor-pointer group relative overflow-hidden"
                 >
                   {/* Gradient accent */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10 -z-10" />
