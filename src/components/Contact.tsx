@@ -17,8 +17,8 @@ const contactInfo = [
   {
     icon: SiWhatsapp,
     label: 'WhatsApp',
-    value: '0721684342',
-    link: 'https://wa.me/94721684342?text=Hi%20Sineth!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.',
+    value: '0703287271',
+    link: 'https://wa.me/94703287271?text=Hi%20Sineth!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.',
   },
   {
     icon: FiMapPin,
@@ -31,7 +31,7 @@ const contactInfo = [
 const socialLinks = [
   { icon: SiGithub, href: 'https://github.com/Sine-D', label: 'GitHub', color: '#ffffff' },
   { icon: SiLinkedin, href: 'https://www.linkedin.com/in/sineth-dinsara/', label: 'LinkedIn', color: '#0A66C2' },
-  { icon: SiWhatsapp, href: 'https://wa.me/0721684342', label: 'Whatsapp', color: '#1DA1F2' },
+  { icon: SiWhatsapp, href: 'https://wa.me/94703287271', label: 'Whatsapp', color: '#25D366' },
 
 ]
 
