@@ -141,7 +141,7 @@ const projects: Project[] = [
     title: 'Habits Tracking & Meditation App',
     description: 'A modern Habits Tracking & Meditation App with real-time habits tracking and user dashboard .',
     tech: ['Kotlin', 'Shared Preferences', 'Android', 'SQLite'],
-    image: 'https://techcrunch.com/wp-content/uploads/2020/02/Screen-Shot-2020-02-10-at-11.44.06-AM.png?resize=668,433',
+    image: 'https://www.saturdaygift.com/wp-content/uploads/Habit-Tracker-Printable-Templates-Cute-Free-Printables-SaturdayGift.jpg',
     github: 'https://github.com/Sine-D/Habito',
     demo: 'https://example.com',
     featured: false,
